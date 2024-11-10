@@ -81,6 +81,11 @@ mod tests {
         );
         cache.insert(appointment1.clone());
         cache.insert(appointment2.clone());
-        assert_eq!(cache.get_all(), vec![&appointment1, &appointment2]);
+
+        // The appointments are not guaranteed to be in the same order
+        let mut cache_data = cache.get_all();
+        cache_data.sort_by_key(|a| a.id());
+
+        assert_eq!(cache_data, vec![&appointment1, &appointment2]);
     }
 }
