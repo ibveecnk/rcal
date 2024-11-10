@@ -1,0 +1,6 @@
+[build]
+rustflags = [
+    "--cfg",
+    "tokio_unstable",
+] # custom flags to pass to all compiler invocations
+incremental = true # whether or not to enable incremental compilation

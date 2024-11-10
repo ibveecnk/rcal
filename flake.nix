@@ -22,8 +22,10 @@
             rustPackages.clippy
             cargo-watch
             cargo-nextest
-            ];
+            tokio-console
+          ];
           RUST_SRC_PATH = rustPlatform.rustLibSrc;
+          RUST_LOG = "debug";
         };
       }
     );
