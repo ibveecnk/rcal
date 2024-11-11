@@ -50,7 +50,7 @@ mod tests {
         let mut cache = Cache::new();
 
         for i in 0..10 {
-            let appointment = Appointment::new(
+            let appointment = Appointment::new_from_utc(
                 i,
                 "Meeting".to_string(),
                 "Discuss the project".to_string(),
@@ -65,14 +65,14 @@ mod tests {
     #[test]
     fn test_get_all() {
         let mut cache = Cache::new();
-        let appointment1 = Appointment::new(
+        let appointment1 = Appointment::new_from_utc(
             1,
             "Meeting".to_string(),
             "Discuss the project".to_string(),
             chrono::Utc::now(),
             chrono::Utc::now(),
         );
-        let appointment2 = Appointment::new(
+        let appointment2 = Appointment::new_from_utc(
             2,
             "Lunch".to_string(),
             "Eat with colleagues".to_string(),
